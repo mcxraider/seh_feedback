@@ -1,0 +1,166 @@
+Comment,Label
+The article is poorly researched and full of inaccuracies.,Negative_Complaint
+You didn’t cover the key aspects of the topic.,Negative_Complaint
+The writing is too convoluted and hard to follow.,Negative_Complaint
+There are too many grammatical errors in the content.,Negative_Complaint
+Your articles are always biased.,Negative_Complaint
+This is trash.,Unhelpful_Negative
+Worst thing I’ve ever read.,Unhelpful_Negative
+I hate this article.,Unhelpful_Negative
+Completely useless.,Unhelpful_Negative
+Why do you even bother writing?,Unhelpful_Negative
+"The introduction is engaging, but the conclusion feels rushed.",Moderate_Constructive
+You could improve the structure by adding clear subheadings.,Moderate_Constructive
+"Some of your points are valid, but they need more supporting evidence.",Moderate_Constructive
+Consider providing examples to make your arguments stronger.,Moderate_Constructive
+"The article is good, but it’s too long; try condensing it.",Moderate_Constructive
+"The article has potential, but there are gaps in the explanation of key concepts, such as [specific point]. Including case studies or visuals could improve it significantly.",Detailed_Constructive
+"I appreciate the effort, but it would help if you linked more academic sources to make the claims credible.",Detailed_Constructive
+Great article! The explanation of [specific topic] was very clear and informative.,Helpful_Positive
+"I loved the flow of your arguments, and the use of examples was spot on.",Helpful_Positive
+This article helped me understand [specific problem or topic] in a way I never thought of before.,Helpful_Positive
+"Your writing style is concise and to the point, which makes it enjoyable to read.",Helpful_Positive
+Thank you for including a summary at the end—it’s very helpful!,Helpful_Positive
+Amazing article!,Unhelpful_Positive
+I love your writing!,Unhelpful_Positive
+This is the best thing ever!,Unhelpful_Positive
+Keep up the good work!,Unhelpful_Positive
+Fantastic!,Unhelpful_Positive
+"The article was okay, but it didn’t add much value to what I already knew.",Neutral_Descriptive
+"It’s a decent read, but I’ve seen similar content elsewhere.",Neutral_Descriptive
+"The points were valid, but the writing lacked energy.",Neutral_Descriptive
+It was neither bad nor particularly engaging.,Neutral_Descriptive
+"Good attempt, but it felt incomplete.",Neutral_Descriptive
+"Not bad, not great.",Neutral_Generic
+I’m indifferent about this article.,Neutral_Generic
+"It’s fine, nothing special.",Neutral_Generic
+"Meh, it’s alright.",Neutral_Generic
+"Could be better, but it’s not terrible.",Neutral_Generic
+Visit my website for more info: www.spamlink.com.,Spam
+First comment!,Spam
+I don’t care about this.,Spam
+Can you write about cats instead?,Spam
+asdfjkl; just typing randomly.,Spam
+This article is an insult to the intelligence of your readers.,Emotion_Angry
+I’m so frustrated that you wrote something this misleading!,Emotion_Angry
+This is the kind of nonsense that makes me unsubscribe from blogs.,Emotion_Angry
+This article just made my day!,Emotion_Happy
+I’m so glad I stumbled upon this—it’s exactly what I needed!,Emotion_Happy
+You’ve outdone yourself; I’m thoroughly impressed.,Emotion_Happy
+This topic made me realise how much I’ve been struggling with [issue].,Emotion_Sad
+Reading this article left me feeling disappointed.,Emotion_Sad
+It’s unfortunate that this article didn’t live up to my expectations.,Emotion_Sad
+"Wow, this is exactly the kind of content I’ve been looking for!",Emotion_Excited
+I can’t wait to share this with my team.,Emotion_Excited
+This article got me so excited to learn more about the topic!,Emotion_Excited
+Could you write more about [specific subtopic]?,Suggestion
+It would be great if you included a downloadable PDF for this article.,Suggestion
+Have you considered adding video content alongside your blogs?,Suggestion
+Can you explore [specific trend] in your future articles?,Suggestion
+A step-by-step guide on this topic would be very helpful.,Suggestion
+The section on [specific topic] was very insightful.,Content_Specific
+I felt the paragraph about [specific topic] was repetitive.,Content_Specific
+You should explore [specific angle] as well—it’s quite relevant to the topic.,Content_Specific
+"The font size is too small, making it hard to read.",Design_Feedback
+Your layout is visually appealing and easy to navigate.,Design_Feedback
+Consider using more visuals and less text to break up the content.,Design_Feedback
+The product I received was damaged and unusable.,Negative_Complaint
+Delivery took way longer than expected.,Negative_Complaint
+"The item description was misleading, and it’s not what I ordered.",Negative_Complaint
+Customer service didn’t respond to my queries at all.,Negative_Complaint
+The return process is too complicated and frustrating.,Negative_Complaint
+This site is the worst!,Unhelpful_Negative
+I’ll never shop here again!,Unhelpful_Negative
+Totally useless company.,Unhelpful_Negative
+I hate this platform.,Unhelpful_Negative
+Worst experience ever!,Unhelpful_Negative
+"The product selection is great, but filtering options could be improved.",Constructive_Criticism
+The checkout process is confusing; consider simplifying it.,Constructive_Criticism
+"Prices are competitive, but more discounts would be appreciated.",Constructive_Criticism
+The app crashes frequently; please work on the stability.,Constructive_Criticism
+Consider adding a loyalty programme to reward regular buyers.,Constructive_Criticism
+Great selection of products and very fast delivery!,Helpful_Positive
+"The discounts on electronics are amazing, keep it up!",Helpful_Positive
+I appreciate how easy it is to track my order on your app.,Helpful_Positive
+The customer service team resolved my issue promptly—thank you!,Helpful_Positive
+This is my go-to platform for online shopping!,Helpful_Positive
+Love this app!,Unhelpful_Positive
+Awesome service!,Unhelpful_Positive
+Fantastic deals!,Unhelpful_Positive
+Best shopping site ever!,Unhelpful_Positive
+Simply amazing!,Unhelpful_Positive
+"The experience was okay, but nothing outstanding.",Neutral
+"Products are decent, but delivery times are inconsistent.",Neutral
+"It’s not bad, but I’ve had better experiences elsewhere.",Neutral
+"The site is functional, but it feels outdated.",Neutral
+"Overall, an average experience.",Neutral
+"Please add more payment options, like instalments.",Suggestion
+Consider offering free shipping for orders over a certain amount.,Suggestion
+It would be great if you had more eco-friendly product options.,Suggestion
+Add a chat feature to communicate directly with sellers.,Suggestion
+Expand your product categories to include more niche items.,Suggestion
+The article is poorly researched and full of inaccuracies.,Negative_Complaint
+You didn’t cover the key aspects of the topic.,Negative_Complaint
+The writing is too convoluted and hard to follow.,Negative_Complaint
+There are too many grammatical errors in the content.,Negative_Complaint
+Your articles are always biased.,Negative_Complaint
+This is trash.,Unhelpful_Negative
+Worst thing I’ve ever read.,Unhelpful_Negative
+I hate this article.,Unhelpful_Negative
+Completely useless.,Unhelpful_Negative
+Why do you even bother writing?,Unhelpful_Negative
+"The introduction is engaging, but the conclusion feels rushed.",Moderate_Constructive
+You could improve the structure by adding clear subheadings.,Moderate_Constructive
+"Some of your points are valid, but they need more supporting evidence.",Moderate_Constructive
+Consider providing examples to make your arguments stronger.,Moderate_Constructive
+"The article is good, but it’s too long; try condensing it.",Moderate_Constructive
+"The article has potential, but there are gaps in the explanation of key concepts, such as [specific point]. Including case studies or visuals could improve it significantly.",Detailed_Constructive
+"I appreciate the effort, but it would help if you linked more academic sources to make the claims credible.",Detailed_Constructive
+Great article! The explanation of [specific topic] was very clear and informative.,Helpful_Positive
+"I loved the flow of your arguments, and the use of examples was spot on.",Helpful_Positive
+This article helped me understand [specific problem or topic] in a way I never thought of before.,Helpful_Positive
+"Your writing style is concise and to the point, which makes it enjoyable to read.",Helpful_Positive
+Thank you for including a summary at the end—it’s very helpful!,Helpful_Positive
+Amazing article!,Unhelpful_Positive
+I love your writing!,Unhelpful_Positive
+This is the best thing ever!,Unhelpful_Positive
+Keep up the good work!,Unhelpful_Positive
+Fantastic!,Unhelpful_Positive
+"The article was okay, but it didn’t add much value to what I already knew.",Neutral_Descriptive
+"It’s a decent read, but I’ve seen similar content elsewhere.",Neutral_Descriptive
+"The points were valid, but the writing lacked energy.",Neutral_Descriptive
+It was neither bad nor particularly engaging.,Neutral_Descriptive
+"Good attempt, but it felt incomplete.",Neutral_Descriptive
+"Not bad, not great.",Neutral_Generic
+I’m indifferent about this article.,Neutral_Generic
+"It’s fine, nothing special.",Neutral_Generic
+"Meh, it’s alright.",Neutral_Generic
+"Could be better, but it’s not terrible.",Neutral_Generic
+Visit my website for more info: www.spamlink.com.,Spam
+First comment!,Spam
+I don’t care about this.,Spam
+Can you write about cats instead?,Spam
+asdfjkl; just typing randomly.,Spam
+This article is an insult to the intelligence of your readers.,Emotion_Angry
+I’m so frustrated that you wrote something this misleading!,Emotion_Angry
+This is the kind of nonsense that makes me unsubscribe from blogs.,Emotion_Angry
+This article just made my day!,Emotion_Happy
+I’m so glad I stumbled upon this—it’s exactly what I needed!,Emotion_Happy
+You’ve outdone yourself; I’m thoroughly impressed.,Emotion_Happy
+This topic made me realise how much I’ve been struggling with [issue].,Emotion_Sad
+Reading this article left me feeling disappointed.,Emotion_Sad
+It’s unfortunate that this article didn’t live up to my expectations.,Emotion_Sad
+"Wow, this is exactly the kind of content I’ve been looking for!",Emotion_Excited
+I can’t wait to share this with my team.,Emotion_Excited
+This article got me so excited to learn more about the topic!,Emotion_Excited
+Could you write more about [specific subtopic]?,Suggestion
+It would be great if you included a downloadable PDF for this article.,Suggestion
+Have you considered adding video content alongside your blogs?,Suggestion
+Can you explore [specific trend] in your future articles?,Suggestion
+A step-by-step guide on this topic would be very helpful.,Suggestion
+The section on [specific topic] was very insightful.,Content_Specific
+I felt the paragraph about [specific topic] was repetitive.,Content_Specific
+You should explore [specific angle] as well—it’s quite relevant to the topic.,Content_Specific
+"The font size is too small, making it hard to read.",Design_Feedback
+Your layout is visually appealing and easy to navigate.,Design_Feedback
+Consider using more visuals and less text to break up the content.,Design_Feedback
