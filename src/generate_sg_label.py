@@ -14,7 +14,7 @@ logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-## load evv variables
+## load env variables
 from dotenv import load_dotenv
 
 load_dotenv()
