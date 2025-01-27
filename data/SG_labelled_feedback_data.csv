@@ -1,69 +1,394 @@
 Feedback id,Label,Comment
-3577258,Negative_Complaint,try to do discount. yet totally different. cancel all discount. 
-3569525,Constructive_Criticism,"The team should think along the purchase amount & not by product category for benefit to everyone, be it Shopee, Seller & customer. Thabk you "
-3538575,Negative_Complaint,useless junk
-3532189,Design_Feedback,System shd send the alert to respective logistic team lead instead of let sellers fill up the form as  often fill up few times also no action fr team!
-3531102,Negative_Complaint,"You did not solve my query, this is just a small envelope but I need to pay a postage fee of $0.52, this was not mentioned when I purchased the vouche"
-3488212,Negative_Complaint,"article says ""Earnings from your sales will be credited to your Seller Balance within 2 to 7 working days  "" but now agent says upto 25 days"
-3479043,Constructive_Criticism,Did not state need to wait how long before a promotion can be set after price increase.
-3431961,Constructive_Criticism,"It says that this only applies for selected sellers, what about others? Thanks."
-3428859,Design_Feedback,Hi We don't have a local base in Singapore. Would you please provide the information about how to sell on Shopee? Our brand: vivantwine.com.tw
-3412087,Negative_Complaint,i need a link to raise dispute as I am cross border seller which received my returned parcel after many days
-3389721,Negative_Complaint,dont have that button
-3385660,Negative_Complaint,"for a costumed product , a small price is only a payment unit, buyers may pay a few unit . so the shoppe is just going lazada management mode. "
-3383056,Constructive_Criticism,"does not show how the FHR gets tabulated into a % figure. am sending out all orders placed before 2pm within the same day, Mon-sat. But FHR below 90%."
-3379949,Negative_Complaint,The information did not inform on where we are still getting 57% chat response rate despite have reply promptly to customer.
-3370637,Constructive_Criticism,This is way too complicated and so much work for the sellers... please simplify.
-3577258,Negative_Complaint,try to do discount. yet totally different. cancel all discount. 
-3569525,Constructive_Criticism,"The team should think along the purchase amount & not by product category for benefit to everyone, be it Shopee, Seller & customer. Thabk you "
-3538575,Negative_Complaint,useless junk
-3532189,Design_Feedback,System shd send the alert to respective logistic team lead instead of let sellers fill up the form as  often fill up few times also no action fr team!
-3531102,Negative_Complaint,"You did not solve my query, this is just a small envelope but I need to pay a postage fee of $0.52, this was not mentioned when I purchased the vouche"
-3488212,Negative_Complaint,"article says ""Earnings from your sales will be credited to your Seller Balance within 2 to 7 working days  "" but now agent says upto 25 days"
-3479043,Negative_Complaint,Did not state need to wait how long before a promotion can be set after price increase.
-3431961,Constructive_Criticism,"It says that this only applies for selected sellers, what about others? Thanks."
-3428859,Design_Feedback,Hi We don't have a local base in Singapore. Would you please provide the information about how to sell on Shopee? Our brand: vivantwine.com.tw
-3412087,Neutral,i need a link to raise dispute as I am cross border seller which received my returned parcel after many days
-3389721,Negative_Complaint,dont have that button
-3385660,Negative_Complaint,"for a costumed product , a small price is only a payment unit, buyers may pay a few unit . so the shoppe is just going lazada management mode. "
-3383056,Constructive_Criticism,"does not show how the FHR gets tabulated into a % figure. am sending out all orders placed before 2pm within the same day, Mon-sat. But FHR below 90%."
-3379949,Negative_Complaint,The information did not inform on where we are still getting 57% chat response rate despite have reply promptly to customer.
-3370637,Constructive_Criticism,This is way too complicated and so much work for the sellers... please simplify.
-3369604,Negative_Complaint,pls remove JNT from my shop! thank you 
-3366719,Negative_Complaint,"And CS keep giving me same excuse for the deletion. I appeal and appeal, give reply me with stanrdard message. I am a  member and buy SGD from NP.
+3577258,['Negative Complaint'],try to do discount. yet totally different. cancel all discount. 
+3569525,['Constructive Criticism'],"The team should think along the purchase amount & not by product category for benefit to everyone, be it Shopee, Seller & customer. Thabk you "
+3538575,['Negative Complaint'],useless junk
+3532189,['Constructive Criticism'],System shd send the alert to respective logistic team lead instead of let sellers fill up the form as  often fill up few times also no action fr team!
+3531102,['Negative Complaint'],"You did not solve my query, this is just a small envelope but I need to pay a postage fee of $0.52, this was not mentioned when I purchased the vouche"
+3488212,['Negative Complaint'],"article says ""Earnings from your sales will be credited to your Seller Balance within 2 to 7 working days  "" but now agent says upto 25 days"
+3479043,['Constructive Criticism'],Did not state need to wait how long before a promotion can be set after price increase.
+3431961,['Constructive Criticism'],"It says that this only applies for selected sellers, what about others? Thanks."
+3428859,['Design Feedback'],Hi We don't have a local base in Singapore. Would you please provide the information about how to sell on Shopee? Our brand: vivantwine.com.tw
+3412087,['Negative Complaint'],i need a link to raise dispute as I am cross border seller which received my returned parcel after many days
+3389721,['Negative Complaint'],dont have that button
+3385660,['Negative Complaint'],"for a costumed product , a small price is only a payment unit, buyers may pay a few unit . so the shoppe is just going lazada management mode. "
+3383056,['Constructive Criticism'],"does not show how the FHR gets tabulated into a % figure. am sending out all orders placed before 2pm within the same day, Mon-sat. But FHR below 90%."
+3379949,['Constructive Criticism'],The information did not inform on where we are still getting 57% chat response rate despite have reply promptly to customer.
+3370637,"['Constructive Criticism', 'Design Feedback']",This is way too complicated and so much work for the sellers... please simplify.
+3369604,['Negative Complaint'],pls remove JNT from my shop! thank you 
+3366719,['Negative Complaint'],"And CS keep giving me same excuse for the deletion. I appeal and appeal, give reply me with stanrdard message. I am a  member and buy SGD from NP.
 "
-3365550,Design_Feedback,I need to find the link on PC since im a Malaysia seller and having Shopee SG on my phone is legally not possible
-3360951,Negative_Complaint,We do not want ndd. We filled a form to opt out. Do not toggle on for us again! We do not want ndd. 
-3359221,Negative_Complaint,Shopee policy needs to be improved. Naturally Plus repeatedly told me they dont provide LOA. and your platform showed biased treatment to other seller
-3358843,Negative_Complaint,"Bullshit policy to please and side with customer, treat your sellers like your business partners, not your working slaves."
-3356073,Negative_Complaint,"The information is not updated. My account can no longer set minimum purchase quantity.
+3365550,['Design Feedback'],I need to find the link on PC since im a Malaysia seller and having Shopee SG on my phone is legally not possible
+3360951,['Negative Complaint'],We do not want ndd. We filled a form to opt out. Do not toggle on for us again! We do not want ndd. 
+3359221,"['Negative Complaint', 'Design Feedback']",Shopee policy needs to be improved. Naturally Plus repeatedly told me they dont provide LOA. and your platform showed biased treatment to other seller
+3358843,['Negative Complaint'],"Bullshit policy to please and side with customer, treat your sellers like your business partners, not your working slaves."
+3356073,['Negative Complaint'],"The information is not updated. My account can no longer set minimum purchase quantity.
 "
-3349165,Design_Feedback,customer want to self pickup from our shop
-3346765,Positive Comment,"after customer make payment, the system will immediately send out message saying that ""Thank you for your purchase, we will ship it as soon as possibl"
-3346636,Design_Feedback,The information did not tell us on how we can select our preferred 3PL partners.
-3346493,Negative_Complaint,Useless implementation. Its going to create more unnecessary issues for logistics. The person who pushed this implementation should reconsider his job
-3338316,Design_Feedback,Saturday DTS should not be a working day
-3337365,Design_Feedback,How can uparcel seller get fast hand over rate when order placed before 2pm must be scanned in 2359 on the same day as uparcel can't do that 
-3330746,Design_Feedback,What about frozen products such as seafood and ice-cream?
-3326884,Negative_Complaint,To adjustment  the commission fee the seller lost  profit margin and these is no benefit for the seller.
-3322187,Design_Feedback,"I dont understands what does it means by ""Sellers will be able to offer free shipping benefits to buyers at no cost from 5 Sep 2024 onwards.""
+3349165,['Design Feedback'],customer want to self pickup from our shop
+3346765,['Positive Comment'],"after customer make payment, the system will immediately send out message saying that ""Thank you for your purchase, we will ship it as soon as possibl"
+3346636,['Design Feedback'],The information did not tell us on how we can select our preferred 3PL partners.
+3346493,"['Negative Complaint', 'Design Feedback']",Useless implementation. Its going to create more unnecessary issues for logistics. The person who pushed this implementation should reconsider his job
+3338316,['Design Feedback'],Saturday DTS should not be a working day
+3337365,['Constructive Criticism'],How can uparcel seller get fast hand over rate when order placed before 2pm must be scanned in 2359 on the same day as uparcel can't do that 
+3330746,['Design Feedback'],What about frozen products such as seafood and ice-cream?
+3326884,['Negative Complaint'],To adjustment  the commission fee the seller lost  profit margin and these is no benefit for the seller.
+3322187,"['Design Feedback', 'Neutral']","I dont understands what does it means by ""Sellers will be able to offer free shipping benefits to buyers at no cost from 5 Sep 2024 onwards.""
 "
-3322129,Constructive_Criticism,better to have a function that allows seller to MASS DELETE or MASS DELIST 
-3321703,Negative_Complaint,"Commission Fee had increased so much that causes seller to earn less, who will bear for our packaging tools for it where things keep increasing!"
-3310828,Neutral,not much details
-3308258,Negative_Complaint,"Utterly rubbish guidelines, if other 3PL can do a better job, you seriously need to reconsider how your delivery team handles items. Ridiculous."
-3302439,Design_Feedback,shopee express do not come to pickup how to do
-3302117,Negative_Complaint,No link to request compensation. Make more fault for seller to claim from logistics.
-3291175,Design_Feedback,It does not contain information on what are the criteria that need to be met in order to be qualified for MPQ option.
-3279062,Design_Feedback,"I dont have the ""Add Images"" option on my Product Description Tab"
-3275719,Design_Feedback,Theres no appeal button where it supposed to be
-3271035,Negative_Complaint,Separate buyer and seller chat. I am penalised because of seller auto sending me messages which I dont reply because I am a seller as well.
-3268288,Neutral,"Please note that some buyers only want to use for free our air coolers,  chillers and Freezers  for  free over 15 days. We cover warranty not use for "
-3266439,Negative_Complaint,The estimate released date is way past over and I haven't received my payment.Please arrange ASAP 
-3253158,Negative_Complaint,Shopee's very own dear courier SPX did NOT pick up item in time. What is Shopee expecting merchant to do?
-3250035,Constructive_Criticism,"Shopee should automatically refund when shopee accept COM , not ask seller to do additional work to submit this and that, this is shopee responsibity"
-3248946,Neutral,I don't understand.
-3231368,Negative_Complaint,troublesome when there is no NOA when shopee mis-plot listing 
-3223608,Constructive_Criticism,There is no explanation on how the CRR is calculated.
-3214910,Negative_Complaint,This DTS 1 and DTS 2 policy is the worst policy ever. it is super stressful and confusing for both customers and sellers.
-3205937,Design_Feedback,The product video does not display play button despite following instruction
+3322129,['Constructive Criticism'],better to have a function that allows seller to MASS DELETE or MASS DELIST 
+3321703,['Negative Complaint'],"Commission Fee had increased so much that causes seller to earn less, who will bear for our packaging tools for it where things keep increasing!"
+3310828,['Neutral'],not much details
+3308258,['Negative Complaint'],"Utterly rubbish guidelines, if other 3PL can do a better job, you seriously need to reconsider how your delivery team handles items. Ridiculous."
+3302439,"['Design Feedback', 'Neutral']",shopee express do not come to pickup how to do
+3302117,['Negative Complaint'],No link to request compensation. Make more fault for seller to claim from logistics.
+3291175,"['Design Feedback', 'Neutral']",It does not contain information on what are the criteria that need to be met in order to be qualified for MPQ option.
+3279062,"['Design Feedback', 'Neutral']","I dont have the ""Add Images"" option on my Product Description Tab"
+3275719,"['Design Feedback', 'Neutral']",Theres no appeal button where it supposed to be
+3271035,['Negative Complaint'],Separate buyer and seller chat. I am penalised because of seller auto sending me messages which I dont reply because I am a seller as well.
+3268288,['Neutral'],"Please note that some buyers only want to use for free our air coolers,  chillers and Freezers  for  free over 15 days. We cover warranty not use for "
+3266439,['Negative Complaint'],The estimate released date is way past over and I haven't received my payment.Please arrange ASAP 
+3253158,['Negative Complaint'],Shopee's very own dear courier SPX did NOT pick up item in time. What is Shopee expecting merchant to do?
+3250035,['Constructive Criticism'],"Shopee should automatically refund when shopee accept COM , not ask seller to do additional work to submit this and that, this is shopee responsibity"
+3248946,['Neutral'],I don't understand.
+3231368,['Negative Complaint'],troublesome when there is no NOA when shopee mis-plot listing 
+3223608,['Constructive Criticism'],There is no explanation on how the CRR is calculated.
+3214910,['Negative Complaint'],This DTS 1 and DTS 2 policy is the worst policy ever. it is super stressful and confusing for both customers and sellers.
+3205937,['Design Feedback'],The product video does not display play button despite following instruction
+3198756,['Negative Complaint'],my problem is not in your list. I unable to choose the date for pick up cos it prompt only 13-07-24 which we are closed on weekend
+3189843,['Negative Complaint'],Reasons for brand rejection was not specified. I applied three times but the reason was not specified as I keep tweaking my applications.
+3188691,['Negative Complaint'],"how to dispute? can't find link or form
+"
+3179723,['Negative Complaint'],"Not found   Under the Adjustment tab on the My Balance page, select a transaction with "
+3177353,['Negative Complaint'],PACKING ALL NEED MOENY 
+3165836,['Negative Complaint'],"This is not helpful if we wan to see all the our reviews we have done. Also, i did a reviews over 4 weeks. Yet it doesn't appear in the shop listing"
+3164183,['Design Feedback'],There is no appeal button to click for a wrong suggested category
+3163050,"['Design Feedback', 'Constructive Criticism']",It did not mentioned that if products under promotion not able to turn on vacation mode
+3158754,['Negative Complaint'],I cannot install the application. I want to check my order. What should I do?
+3147246,['Negative Complaint'],control your seller
+3127728,['Negative Complaint'],"To support small entrepreneur, please give more greenlight and intensive. Shopee wanted to limit pre-order less than 5%, a lot of charges on sellee"
+3126265,['Design Feedback'],How to change SSL ?
+3126086,['Negative Complaint'],I want to appeal but cannot
+3125357,['Constructive Criticism'],not informative enough
+3123366,['Constructive Criticism'],where is the link to start?
+3117976,['Negative Complaint'],Pls email me at caitlinleeyq@gmail.com in regard to banning of certain products of mine. I bought my items from LEGO itself 
+3105207,['Constructive Criticism'],"I want to change my shipping chanel from j&t to spx
+But there NO
+Option for me to do so"
+3096823,['Design Feedback'],The webform is no longer available. 
+3093715,['Negative Complaint'],"Don't force people to work just to satisfy your buyers, we're your partners, not your employees for God's sake"
+3080975,['Design Feedback'],"i cant find the option for full screen option in chat box corner
+"
+3077722,['Negative Complaint'],cant find it at all
+3075445,['Constructive Criticism'],outdated instruction with new crm setting
+3071830,['Negative Complaint'],bad
+3071432,['Negative Complaint'],Article is too damn long.
+3062907,['Negative Complaint'],Difficulty 
+3058378,['Constructive Criticism'],Give actual contact numbers/persons that we can contact that can provide help within the day as this is a pick up issue.
+3048555,['Neutral'],If the logistic shippers are ready to pick up all parcels then it will be easily for us sellers to commit the fast hand over period.
+3027562,['Design Feedback'],I'm trying to find categories such as Food Supplement but there is no result in the page (https://seller.shopee.sg/edu/category-guide)
+3027345,['Negative Complaint'],Extremely idiotic policy to kill your sellers.
+3026809,['Negative Complaint'],Can't find this MOQ feature in seller center
+3018801,['Negative Complaint'],"HOW DO i know from where should I COLLECT the goods ordered
+and whether it has arrived?"
+3012417,['Negative Complaint'],Arrange same day drop off is difficult for seller might packing the order wrongly in order to ship out fast. Nearby dont have drop off point.
+3011885,['Negative Complaint'],"The drivers always don't collect the parcels as arranged, even though we wait till 8pm+ on some days. No updates, no calls."
+3002716,['Negative Complaint'],our problems is never not handling over . it is delivery partner ability to come and pick. many shopee partners do not work 24hours and offday
+3001142,"['Constructive Criticism', 'Design Feedback']",Totally don't understand the part on Obtaining links for images (evidence) uploaded to your Google Drive! Kindly make it more user friendly!
+2986279,['Negative Complaint'],Too complicating
+2986277,['Negative Complaint'],It’s just too complicating
+2974896,['Negative Complaint'],对于损坏的产品我要如何联系到shoppee投诉
+2971395,['Negative Complaint'],SPX didn’t pick up NDD and now showing NDD fail on seller’s page? shame on you
+2967275,['Constructive Criticism'],how do i remove cc installment from my payment method
+2953777,['Negative Complaint'],I cant add my bank account. I have tried so many times and still can't withdraw my money. Please help me withdraw my money and add my bank account.
+2937498,['Design Feedback'],Our sub account dont have message suggestion pop up after creating shortcuts 
+2937238,['Neutral'],Little confusing 
+2923917,['Negative Complaint'],"Shopee should stop the NDD program, base on always no one pick up after arrangement, this will cause seller in trouble, and seller will penalty by sys"
+2921035,['Constructive Criticism'],"im looking for ""How to appeal"", not explanation."
+2912610,"['Constructive Criticism', 'Design Feedback']",you can just add links application/shop requirement/hardware requirement all together
+2910866,['Negative Complaint'],Shopee fail to pick up and cause delayed and put the fault to seller.
+2900543,['Negative Complaint'],"Shopee practised unfair act to different sellers, I have been reported twice same issue. Other sellers like ""searchme"" was never penalised on this"
+2891816,['Neutral'],PLS CONTACT US 98160687
+2889904,['Constructive Criticism'],need more detailed example
+2886056,['Negative Complaint'],Why hasn't the account manager contacted me? I need an account manager who understands Chinese.
+2885558,['Negative Complaint'],Could not find Minimum Purchase Quantity in excle
+2875338,['Negative Complaint'],"I do my listing correctly 
+But shopee deboosted my listing
+I'm not sure what's wrong"
+2874723,['Negative Complaint'],"NDD SPX ALWAYS COME AT 11AM!! HOW DO YOU WANT ME TO PACK THE ORDERS BEFORE 3PM ,BUT COURIER COME SO EARLY! COMPLAINED MANY TIMES BUT NO IMPROVEMENT"
+2866027,['Negative Complaint'],The pick up never happens. 
+2864206,['Constructive Criticism'],"I need to know how to edit campaign prices that are under review, but it wasn't stated. "
+2863619,['Design Feedback'],"there is no direct link to a shopee agent, this is the most important basic feature that's missing for some horrible reason"
+2860192,['Negative Complaint'],unable to view links upon clicking and did not state ways of being selected for eligibility of setting minimum order quantity
+2853700,['Negative Complaint'],There is no reason stated on the listing why the product was banned. The product is not violating any of shopee's policies.
+2844650,['Negative Complaint'],Shopee is taking too much commission and platform fee from sellers.
+2827808,['Neutral'],pls contact us 98160687
+2827617,['Negative Complaint'],shopee agents never check all details provided by seller properly
+2822972,['Constructive Criticism'],Chat response stats need to be separate for seller and buyer. I recently started a shop and it seems my chat response stats as seller is now affected
+2817665,['Design Feedback'],There's no add image option now
+2811225,['Negative Complaint'],"Shopee created an unfair Policy that fines more penalties to sellers. The buyer changes his mind when buying under the buyer's penalty, no refund."
+2808696,['Negative Complaint'],I don't even have next day delivery.
+2808064,['Negative Complaint'],I was flagged for spam listing. But I dont know what type of spam listing i violated. 
+2794634,['Design Feedback'],does shopee add in S&P cost after the above calculation or lump in into the initial calculation after discount but before GST -seller kena S&P as cost
+2794629,['Design Feedback'],No sample calculations on how shopee charges the seller
+2792051,['Constructive Criticism'],Still unsure how to do it
+2790773,['Negative Complaint'],"Large parcel is ready, but logistic never come to pickup but update system to 'Parcel not ready, pickup failed', then missed deadline ? Then how?"
+2786964,['Constructive Criticism'],If buyer choose self collection point and locker but didn't go collect the parcel? Who should bear the shipping cost? Buyer should be responsible too
+2771649,['Negative Complaint'],"seller arranged for shipment , courier no turn up , order cancelled, who pay seller's advertising fees and sales profits?"
+2759245,['Negative Complaint'],logistics not picking orders during peak period for 3 to 4 days resulting in cancellation
+2753820,['Negative Complaint'],We pack so fast Also useless cos Spx express won’t come on time 
+2753738,['Constructive Criticism'],What about the time of purchase or doesn't it count? If buyer paid on Monday 23:59 that counts as Monday? And shipped by Wednesday? 
+2753523,['Negative Complaint'],"seller prepared and arranged to ship customer's order via shopee seller center, yet Shopee's courier did not pick up from seller. So whos problem now?"
+2750561,['Constructive Criticism'],I am unable to find any help to get the results shown in the video 
+2746391,['Negative Complaint'],I already contact and spoke to the person in shopee chat and told me that today there will be a pick up.  But to my disappointment the pickup  failed
+2745931,['Negative Complaint'],How about if no pick up from spx are courier being penalise 
+2744218,"['Design Feedback', 'Constructive Criticism']","there is no ""Add Images"" tab for my account"
+2743292,"['Design Feedback', 'Constructive Criticism']",No pop-up message shown when logged in. How to verify????
+2736426,['Negative Complaint'],"Your parcel is on-hold. Reason: [Item Not Found with Driver]
+"
+2734639,['Neutral'],explain temporary
+2733522,['Negative Complaint'],"It's totally unfair.
+As a seller very disappointed to provide quality products and still getting unwanted and unaware reviews.
+"
+2731579,['Constructive Criticism'],u must take note for those seller with 500 items n above.  easy to penalise.  not easy to keep so many stocks.  unfair if u compare with small company
+2731223,['Negative Complaint'],Late shipments are operational fail on shopee xpress end. People on leave but no replacement driver is sent and NDD delivery treatsame as normal pkg
+2730921,['Negative Complaint'],Never told before about LSR. I just submit the report of late shipment today as in 20/11/2023 and this new policy just pop out today too. Coincident?
+2722757,['Negative Complaint'],Calculator wrongly
+2713824,['Negative Complaint'],it is not even available yet
+2700521,['Negative Complaint'],I have problems please contact me at : southval@singnet.com
+2690947,['Constructive Criticism'],Any contact number to call or email?
+2677157,['Positive Comment'],Signpost normal delivery 
+2671841,['Constructive Criticism'],what happen if the buyer buy wrong item and we as a seller don't mind to refund the buyer? why we get penalized? we should reject returns? 
+2668236,"['Design Feedback', 'Constructive Criticism']","in my product description area, i cannot see any upload button to click for my picture selection for uploading, Why?"
+2664502,"['Design Feedback', 'Constructive Criticism']",Unable to add images within the product
+2664501,"['Design Feedback', 'Constructive Criticism']",Unable to add images within the product
+2659425,['Negative Complaint'],Very difficult to find shippng location over 5kg
+2630275,['Negative Complaint'],"seriously, this is making sellers extremely inconvenient, as buyers often do not check their shopee app messages.
+"
+2623123,['Negative Complaint'],Outdated info.
+2622578,['Constructive Criticism'],"hi, how to adjust your shipping fee to $8, please contact our customer support and provide them with the necessary information. Thank you."
+2622496,['Negative Complaint'],The is no information on how much is the campaign deck we need to pay upfront as well as the package entitlement to join.
+2610644,['Negative Complaint'],Confusing
+2610162,['Constructive Criticism'],how to generate gtin or eam numbers
+2599761,['Negative Complaint'],I still cannot set MOQ!! There is no option for setting MOQ under my sales information. 
+2597615,['Negative Complaint'],Misleading and unhelpful
+2592193,"['Design Feedback', 'Negative Complaint']",There is no upload images button or icon in my product description. It can only be text
+2587923,['Negative Complaint'],"Currently our pick up service been switch to SPX Express, continuing 2 days did not attend our pick-up, totally not as this article descript into."
+2545437,['Negative Complaint'],Cannot find this option in my listing
+2543717,"['Design Feedback', 'Neutral']",I would like to know where are the self-collection point.
+2543502,['Negative Complaint'],Despite showing weight item of per le shopee still anyhow charge shipping
+2524388,['Design Feedback'],"There isn't ""chat with live agent"" icon."
+2497107,['Negative Complaint'],"Buyer give a bad rating due to item received damaged, however the damage is caused by the logistic services, it is not fair to charge to seller"
+2486490,"['Design Feedback', 'Constructive Criticism']",How to be selected seller to upload images?
+2447358,['Negative Complaint'],"this is so difficult to select very annoying not so easy last time very easy to choose category
+"
+2447329,['Negative Complaint'],So irritating! stop changing the category!!!!!!
+2447272,['Constructive Criticism'],"Asking seller to include GTIN/EAN in my listing, but didn't show how to generate the its and where to get.
+Please do something to help the seller "
+2439611,['Negative Complaint'],our listings were deleted due to 'duplicate' but it wasnt. and CS refuse to restore it. and this article doesnt even tell properly what is considered 
+2437610,['Negative Complaint'],My problem not solved 
+2424334,['Negative Complaint'],there is no print invoice at all.
+2367037,['Negative Complaint'],Buyer confirmation has been extended to 7 days. Shopee delays payments to sellers for up to 7 days. Pleae reverse this or we switch focus to Lazada!
+2362487,['Design Feedback'],GTIN/EANがない場合の対処方法が書いていない
+2351156,['Negative Complaint'],I only have the option for SPX Drop off which only accepts parcels < 80cm and to be sent within 2 days. Support response is only given in 5 to 8 days.
+2340713,['Negative Complaint'],So where is the link to request pick up?
+2321841,['Negative Complaint'],"What number do I add?
+"
+2319815,['Negative Complaint'],pls contact us 98160687 
+2317988,['Design Feedback'],"No clear and correct detail given (a proper method) under ""Suggestion"" 
+"
+2312293,['Negative Complaint'],I cannot opt out of shopee xpress
+2311576,['Negative Complaint'],This is very annoying for our order processing. And right before 6.6!
+2279635,['Negative Complaint'],Bad work 
+2277468,['Negative Complaint'],"What happen to parcel that is more than 30 kg?
+"
+2275733,"['Design Feedback', 'Constructive Criticism']",This is done in 2021. The layout now does not have the minimum purchase quantity.
+2273183,['Negative Complaint'],"The Transation formula doesnt not reflect the correct rates when i check with the invoice. 
+It closer to 2.33%(2.16% + 8% )? than 2% + 8%"
+2273153,['Constructive Criticism'],Transation fee is not the same as commission fee?
+2271586,['Negative Complaint'],"It doesn't solve my problem. Shopee express doesn't pick up at my location at all despite me fulfilling the pick up criteria
+"
+2271288,['Negative Complaint'],"Doesnt explain what to do when after arranging shipment, cannot print ABS"
+2271236,['Constructive Criticism'],How to help buyer to locate their parcel
+2270505,['Constructive Criticism'],"What is a Shopee Link
+And how do I LIKE it?"
+2267350,['Constructive Criticism'],how do I become a selected seller for max purchase limit?
+2266534,['Negative Complaint'],"Majority of your points does not support packages more than 5kg. So what am I supposed to do?
+"
+2252958,['Negative Complaint'],没有华文
+2252222,['Negative Complaint'],Unable to upload previous version template (before 24/Apr/2023)
+2252214,['Constructive Criticism'],Looking for mass update template 
+2236619,['Design Feedback'],I don't see a add image tab in product description... why?
+2216072,['Negative Complaint'],"Dear officer 
+i have to listing many times,  still display  two items,   i also report officer many times ,  no relove,   4101448923 &  1759871914 
+"
+2205403,['Constructive Criticism'],"Seller cancel due to buyer not providing personalised item details, not due to out of stock. No other choice is available."
+2163930,['Constructive Criticism'],the shipping fee is need to pay both from buyer and seller?
+2160341,['Design Feedback'],In shopee app adding variations isn't applicable 
+2148329,['Design Feedback'],Minimum order quantity is no longer visible (SAFARI MAC OS)
+2141332,['Negative Complaint'],There was no option to change the MOQ amount.
+2140030,['Negative Complaint'],i dont see it
+2139280,['Negative Complaint'],Some orders have print invoice option and some does not. I have some orders less than 1 month without print invoice option.
+2128734,"['Design Feedback', 'Constructive Criticism']",It is not helpful when I cannot upload a product image for my listing directly from media space after I have done the logo overlay.
+2128576,['Negative Complaint'],"hi please arrange shopee express pick up on time 
+dont know what reason why they keep not coming and all the parcels got expired "
+2104038,"['Design Feedback', 'Constructive Criticism']","There is no ""Minimum Purchase Quantity"" field in the product details page and mass upload template."
+2099876,['Constructive Criticism'],Hi how can I use my own shipping partner?
+2099065,['Negative Complaint'],"cannot find the link in shopee 
+"
+2097174,['Negative Complaint'],I Do not even have the field to input for Max Purchase. I was told its given to selected seller. i wish to be included
+2088595,['Neutral'],"update the information please
+"
+2085442,['Negative Complaint'],I already unsubscribe from coin cashback programme but still charging me service fees
+2081720,['Negative Complaint'],This calculator is merely useless…. It’s totally buyers’ sided. There was a case when I sent out a parcel and ninjavan couldn’t find the item for day
+2079006,['Constructive Criticism'],Ive tried and still cannot upload 3:4 image
+2071887,['Negative Complaint'],the video link is not working
+2069822,['Negative Complaint'],Do not understand 
+2069406,['Design Feedback'],There isn't this option anymore on product description 
+2069306,['Design Feedback'],how to be selected seller
+2051670,['Negative Complaint'],I had a delivery issue with buyer giving all poor rating due to damaged item . Stupid shopee policy can't remove or hide the poor rating abused by buy
+2049494,['Constructive Criticism'],What does unique buyers and net sales mean?
+2047515,['Negative Complaint'],No solution to delete shop
+2033249,['Negative Complaint'],i don't have anything like that
+2028463,['Constructive Criticism'],the listing should not be deleted if the seller had submitted the document
+2020484,['Negative Complaint'],I do not have the option in my seller page
+2015487,['Positive Comment'],"Seller not in fault for late shipping penalty and preference seller batch revoke, as Shopee supported logistic JNT cockup and never attempt collection"
+2013941,['Negative Complaint'],The opening hours for J&T drop off are inaccurate. It wasted a lot of my time going to various drop off point and realised they are all closed. 
+2005762,['Negative Complaint'],I dont sell this
+1984939,['Negative Complaint'],I had been happy with current using only Speed Post and now Shopee wants to my my delivery a nightmare by automatically assign my delivery company!!!
+1974103,['Negative Complaint'],Perishable food but seller own fleet delivery transport car are different each time so non of the supported delivery help and can be apply for.
+1945462,['Negative Complaint'],"not clear information 
+"
+1936142,['Negative Complaint'],Unable to disable Shopee Xpress shipping channel
+1910162,['Negative Complaint'],"your max Withdwal is $9999 , really figure out what oder ID has been paid if refer income sttm  . Please advise "
+1896863,['Negative Complaint'],"Shopee agent do not know the process in handling damaged products, and pushes all fault to seller.. What is than the purpose of this article. "
+1896859,['Negative Complaint'],"This is just 1 sided loop, keeping 3rd party courier outside the loop. Issues such as damage by courier was never included by Shopee."
+1886140,['Negative Complaint'],We got license for selling alcohol. Selling it around 5 years. Why now you have banned bomond vodka. We are a dealer the product
+1853131,['Constructive Criticism'],reason for why the brand submition failed
+1849282,['Neutral'],I am a Singapore seller and am exploring to sell my products overseas to Taiwan and Vietnam. 
+1845595,['Negative Complaint'],"How can you expect me to carry so heavy parcel to the warehouse, that is weight 7 LItre of bottles.  Waited so long for the Pick UP? Order ID
+221216RR"
+1840488,['Negative Complaint'],Service point and operating hours broken link
+1830846,['Constructive Criticism'],"Can give Example how it work
+If not can understand at all"
+1830740,['Negative Complaint'],There is no DTS in my Product Details page
+1828787,['Neutral'],Orders before 1 Jan 2022? Or 2023?
+1809224,['Negative Complaint'],Unable to locate where to upload ACRA in Seller Centre
+1791095,['Neutral'],i am looking for store pick up
+1790402,['Negative Complaint'],"no more useful, hope to find a link to raise a claim"
+1782498,['Negative Complaint'],"Its unfair to us if you sudden change your clause as it affected our sales.
+"
+1766374,['Negative Complaint'],"too many blinking too fast can't catch.
+Also when  creating PIN, it keep display error...."
+1765956,['Negative Complaint'],"i got items all cancelled but no refund, pls do refund ototal $100+, i will advise other not to buy from shopee n put inside forum"
+1765825,['Constructive Criticism'],What about orders that drop off places cannot accept? How are we supposed to drop off or request for a pick up?
+1726909,['Design Feedback'],can find the buttons shown on site. website updated but not help page.
+1707686,['Negative Complaint'],"The shipping on the item indicate is free shipping but at payment, shipping fee still applied automatically. Very confusing. Trust fail."
+1701789,['Negative Complaint'],Doesn't make sense for low-value items
+1666672,['Negative Complaint'],INSUFFICIENT INFO. 8) CAMPAIGN STOCK - What is 1) No Update ????
+1635622,['Constructive Criticism'],The attributes in this sizing charts are too 1 dimension and insufficient to cover the proper information for consumers to under sizing.
+1602625,['Constructive Criticism'],"I need this function. My user id is ""amee.sg"" without the quotes. Please give me the feature"
+1596368,['Design Feedback'],Is this related to how I can list my product and get it listed in Digital Products section in Shopee App? 
+1558219,['Constructive Criticism'],Please add more selections for seller cancel buyer order due to un contactable. 
+1545084,['Constructive Criticism'],"If is small seller, ordered number low, even with 1 returned parcel, the percentage hit is easily high? Don’t shopee should create tier achievement? "
+1462980,['Negative Complaint'],Which Country ?.... Cant find where you shipping ?  and cost....Country
+1446126,['Negative Complaint'],Very confusing……..not user friendly 
+1435886,['Negative Complaint'],It doesnot help seller to improve. Don’t you think the shipping cost of 1-5kg is ridiculously high?
+1404505,['Negative Complaint'],New shipping regulation is way too troublesome and tedious
+1403200,['Negative Complaint'],"So if the seller is new and the item is super bulky, how am I going to bring to destinated location point if there is no pick up service? "
+1401538,['Negative Complaint'],"It's not fair, force local Seller. Late/delayed delivery is always affected fr.overseas/Shopee log'tics pro'ders due to uncontrl schedule. pls review "
+1374164,"['Constructive Criticism', 'Design Feedback']","Could show the process of applying for license of it? Including SFA account as Foreigner, Singpass, fee and IRAS etc."
+1350414,"['Constructive Criticism', 'Design Feedback']","Need to explain what are Search Ads and Discovery Ads and how will these ads appear in the seller listing. Show examples.
+
+"
+1349702,['Neutral'],I responded to buyer to arrange home delivery for an error made. But buyer only realised after cancellation of order
+1345711,['Constructive Criticism'],i wanted to apply for own fleet use but the google form wrote that it is no longer accepting responses. How do i go about doing so?
+1310295,['Negative Complaint'],i didnt find any store pick up. waiting long time to fix
+1306065,['Negative Complaint'],Dont understand why keeping the buyers' names can ensure a safe marketplace for all users. 
+1303129,['Negative Complaint'],"Why shopee keep remove the good function, what’s your management level doing, too many males?"
+1286046,['Negative Complaint'],At least replace their names with username. This is so troublesome when packing orders.
+1280375,['Negative Complaint'],There is no ruler for Seller not fairly penalized for malpractice - supplied wrong/damaged products
+1279606,['Negative Complaint'],"I ask for holiday mode, system not allow, ask ur guy how to settle this, need a lot information and wait for 3 days , case closed, now u say avoid lat"
+1279199,['Constructive Criticism'],Does buyer hv to pay to return faulty/wrong order when its not buyer's fault? How about overseas seller? 
+1277339,['Constructive Criticism'],"Oversea sellers using the same new policy ? Many times that the customer service cannot reach customers, pls understand the ground work 1st !!! "
+1268533,['Constructive Criticism'],didn't give me exact what we should do for my product title.
+1268407,['Constructive Criticism'],Should provide the link to report violations.
+1265914,['Neutral'],Not sure any benefit to seller
+1262496,['Negative Complaint'],I want to sell overseas and I am a seller based in Singapore. This article is not helpful.
+1247119,['Constructive Criticism'],how to amend if the name is wrongly key in.
+1243665,['Constructive Criticism'],Need simple answer
+1216478,"['Design Feedback', 'Constructive Criticism']",There is no MPQ to be found in any of the template. Is this even updated?
+1205678,['Negative Complaint'],"This is just pure stupidity from shopee management. Consumers in the current era are not stupid,  they tend to compare prices."
+1183201,['Constructive Criticism'],Should let sellers to reject the buyer's return / refund in the first place.
+1180299,['Constructive Criticism'],what are the charges?
+1178302,"['Design Feedback', 'Constructive Criticism']",Using spx requires lpn id and pin which was now showed where to obtain these infor
+1155156,['Constructive Criticism'],can add information about how to become a preferred seller?
+1128553,"['Design Feedback', 'Constructive Criticism']","No clear detail given
+"
+1128523,['Design Feedback'],confusing 
+1109997,['Constructive Criticism'],What are the criteria for participating
+1098741,['Negative Complaint'],Do not put this up if your system do not even abide to your terms and condition. 
+1096802,['Constructive Criticism'],i dont see the MOQ option
+1057932,['Negative Complaint'],Shopee Supported Logistics does not provide any benefit as Shopee nor logistics can take responsibility for missing items
+1049340,['Negative Complaint'],Nothing is infringed in my shop on PC version. You might have sent wrong messages 
+1049337,['Constructive Criticism'],Can I k ow what is the item that is counterfeit .lol
+1039841,['Design Feedback'],Outdated info on j & T pick up for all sellers
+1038026,['Constructive Criticism'],How much is Shopee's percentage cut? 
+1029748,['Constructive Criticism'],How come I do not have shopee express selection for delivery to send out 
+1021737,['Constructive Criticism'],"I use blue sg more offten, hopefully it will be approved for me to send my big and fragile item "
+1020985,['Constructive Criticism'],I cannot find the minimum purchase quantity feature
+1015986,['Negative Complaint'],"wrong information, here say this percentage but end up charge 10% of our order amount!"
+1003855,['Constructive Criticism'],If some ceiling fan need my self delivery how to setting  self delivery?
+1000036,['Negative Complaint'],i am still seeing nothing in my product detail page
+995176,['Negative Complaint'],This NEW system don't benefit small sellers
+985149,['Negative Complaint'],once a while I will encounter Ghost Chat when there is no buyer chat but I am deducted point for not responding to a Ghost chat. terrible shopee syste
+977724,['Constructive Criticism'],The auo-refund/return process needs to be changed
+970098,['Constructive Criticism'],I can't sell my product without shipping mode. Why shopee keeps changing? Thanks. 
+959145,['Constructive Criticism'],"From 1st May, are sellers charged both transaction fee and commission fee? Please write clearly."
+928596,['Design Feedback'],"3PLs are unable to meet the delivery time driver would arrive past the opening hours, and take a picture of 
+a closed office -mark as no item 2 pickup"
+923618,['Neutral'],"don't understand
+"
+922141,['Negative Complaint'],How do I stop all the promotion as I can’t enable vacation mode??
+917433,['Negative Complaint'],"Most of the time, late shipment happened when courier did not showed up to pickup orders."
+881968,['Neutral'],哎 不知道说你们什么好 只能祝你们好运了
+877055,['Negative Complaint'],"We did our due deligent to send out items, and cause of fussy customer. We are not mall seller, why do we have to agree to change of mind? "
+862020,"['Constructive Criticism', 'Design Feedback']",The SPX service point list is incomplete. I know of 1 dropoff point but didnt see it on the map. Good to provide a list on the website rather than map
+846231,['Negative Complaint'],The print invoice button is not available. This article since outdated.
+845491,['Constructive Criticism'],for every listing there's a model for that product with various sizes. i have stock for some sizes but other sizes need pre-order . I unable set 
+841740,['Negative Complaint'],"Once J&T Express missed the pick-up, they marked the status as (Parcel not ready), instead of marking them as (ran out of time)."
+839714,['Negative Complaint'],Troublesome procedures to purchase something. Claim here and there. 
+837075,['Constructive Criticism'],I need to know how and where can I to drop off my product for shipment to buyer? 
+834622,['Negative Complaint'],I don't even that that option to print invoice so what am I expected to do?
+834509,['Negative Complaint'],"Will there discount for self drop off? If not, why we want to self drop off to warehouse which is the location is far away. "
+805835,['Constructive Criticism'],"If customer doesn't select free shipping voucher, does Seller participating in Free Shipping Programme still need to pay 2.14% fee? "
+777982,['Negative Complaint'],"The information herein is not found at all.
+"
+753909,['Positive Comment'],I asked the seller to cancel my order. Politely
+753538,['Design Feedback'],direct me how to add slot 
+735935,['Design Feedback'],How can I set shipping for buyers to self collection at selected points?
+722939,['Negative Complaint'],late shipping is partly some of the items werent scan accordingly courrier error we suffer for the penalty and lost of item 
+717555,['Design Feedback'],No information on how uParcel is made available to seller. What is the criteria? How will the seller be able to activate this?
+694483,['Negative Complaint'],"Even seller indicate the size/ model in title also get banned, dont know what shopee checking team is doing, anyhow define spam"
+693544,['Negative Complaint'],"We were not able to dispute on the requests
+"
+689565,['Negative Complaint'],I didn't get what I'm looking for
+663336,['Design Feedback'],True Elements Brand. We have listed our products on your site but when we search True Elements on your site our products on site.
+644550,['Negative Complaint'],"When I report such cases, there is no action taken towatd the seller"
+637299,['Positive Comment'],A lot more
+618831,['Design Feedback'],there is no column to update minimum qty under my product page
+603920,['Negative Complaint'],Did not help answer why standard economy shipping changed from 0.00 to 0.60
+583472,['Constructive Criticism'],"Please provide a detail clear explanation on which keyword the seller has used causing the keyword spam, else the seller has to keep on editng title. "
+579036,"['Constructive Criticism', 'Design Feedback']","Product tittle should be enable to put all relevant wording, as different buyer will search using different wording. For instance T-shirt, Tee, .... "
+572908,['Design Feedback'],"How do we tell if it's pick up or drop off option, it's not stated under shipping channels"
+566469,['Design Feedback'],Shopee should come out a seller calculator just key in selling price and we can get the take back amount.
+566038,['Constructive Criticism'],"1. Has a clearly printed Air Waybill (AWB)
+
+SPX Service Points will not accept any parcels with AWB. -> Is this a typo? Should be ""without AWB""?
+
+"
+565475,['Neutral'],this is not related to Shopee Ads express programn
+562859,['Negative Complaint'],Keep experiencing shipping errors. Consecutive Unsuccessful pickups shown even though item had been confirmed to be dropped off successfully.
+562242,['Negative Complaint'],"pls assist to check why my account still cannot choose pickup from jnt,i alrdy fullfill 5 order per day pickup
+"
+559455,['Negative Complaint'],Already submitted 3 times but no response
+553637,['Negative Complaint'],Can not find Alcohol category id
+537782,['Design Feedback'],My items are perishable mostly frozen items. I am using sellers own delivery fleet.  Would appreciate having sellers own delivery fleet. Why there is 
+519465,['Design Feedback'],How about the others details of pick up locations nor the drop off points location-based on my delivery address for buyer or seller? 
