@@ -246,8 +246,9 @@ def write_to_csv(region: str, combined):
 
     # Rename columns to match the required format
     combined_df.rename(columns={'feedback_id': 'Feedback id',
-                                'label': 'Label',
-                                'Comment': 'Comment'},
+                                'Comment': 'Comment',
+                                'label': 'Label'
+                                },
                         inplace=True)
     combined_df['Comment'] = combined_df['Comment'].str.replace('""', '"', regex=False).str.strip('"')
 
