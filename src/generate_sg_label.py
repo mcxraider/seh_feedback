@@ -23,9 +23,9 @@ CHAT_MODEL   = os.environ["CHAT_MODEL"]
 client       = Groq()
 
 GENERATE_EN_LABELS_PROMPT = '''
-You are an linguistics professor tasked with classifying seller feedback for an e-commerce platform. 
+You are an linguistics professor tasked with classifying seller feedback for an article page on an e-commerce platform. 
 Each feedback item should be categorised into one or more appropriate labels from the following list:
-['Negative Complaint','Constructive Criticism','Design Feedback','Positive Comment','Neutral']
+['Negative Complaint','Constructive Criticism','Design Feedback','Positive Comment','Neutral', 'Unsure']
 You are not to write any code, but just use your knowledge to classify the feedback.
 Your output should be the feedback IDs and their corresponding label.
 
@@ -38,12 +38,13 @@ Example Output format:
 Double check and ensure that your format output matches the example output format provided.
 ''' 
 
+
 def load_region_data(region: str) -> pd.DataFrame:
     # Define the file path based on the region
     region_path = f"../data/official_data/feedback_{region}.xls"
 
     # Specify columns to read
-    columns_to_read = ["Feedback id", "Feedback 1", "Feedback 2"]
+    columns_to_read = ["Feedback id", "Feedback 1", "Feedback 2", "URL"]
 
     # Load the data into a DataFrame
     df = pd.read_excel(region_path, usecols=columns_to_read)
@@ -53,18 +54,19 @@ def load_region_data(region: str) -> pd.DataFrame:
         (df['Feedback 1'].notna()) &
         (df['Feedback 2'].notna()) &
         (df['Feedback 2'] != '{"description":""}')
-    ]
+    ].copy()  # Ensure df_filtered is a separate copy
 
     # Extract the 'description' field from JSON in 'Feedback 2'
-    df_filtered['Feedback 2'] = df_filtered['Feedback 2'].apply(
+    df_filtered.loc[:, 'Feedback 2'] = df_filtered['Feedback 2'].apply(
         lambda x: json.loads(x)['description'] if isinstance(x, str) else None
     )
 
     # Convert 'Feedback id' to numeric and drop rows with invalid IDs
-    df_filtered['Feedback id'] = pd.to_numeric(df_filtered['Feedback id'], errors='coerce')
+    df_filtered.loc[:, 'Feedback id'] = pd.to_numeric(df_filtered['Feedback id'], errors='coerce')
     df_filtered = df_filtered.dropna(subset=['Feedback id'])
 
     return df_filtered
+
 
 
 def format_llm_input(df: pd.DataFrame) -> Tuple[List[Dict[str, str]], Dict[int, str]]:
@@ -138,80 +140,69 @@ def generate_batch_labels(id_feedback_pairs, label_prompt: str, client):
     return pairings, tokens_used
 
 
-def generate_labels(llm_input, num_per_batch, output_file=f'../data/llm_responses/llm_responses.json'):
-    # Determine the number of batches
+def generate_labels(llm_input, num_per_batch, output_file):
+    if not isinstance(llm_input, list):
+        raise TypeError("llm_input must be a list")
+
     num_batches = ceil(len(llm_input) / num_per_batch)
-
-    # Initialise indices for batch processing
     start_index = 0
-
     just_in_case_stop_index = 0
-    
     total_tokens = 0
     
     try:
         for i in trange(num_batches):
-            # Calculate the batch indices
-            end_index = start_index + num_per_batch
+            end_index = min(start_index + num_per_batch, len(llm_input))
             batch_pairs = llm_input[start_index:end_index]
+            
             try:
-                
-                # Call the function to generate labels for the current batch
                 batch_labels, tokens_used = generate_batch_labels(batch_pairs, GENERATE_EN_LABELS_PROMPT, client)
                 total_tokens += tokens_used
             except ValueError:
-                    intermediate_end = start_index+5
-                    batch_pairs = llm_input[start_index:intermediate_end]
-                    batch_labels, tokens_used = generate_batch_labels(batch_pairs, GENERATE_EN_LABELS_PROMPT, client)   
-                    total_tokens += tokens_used
-
-                    # Write the current batch to the JSON file
-                    with open(output_file, 'a') as json_file:
-                        # Convert the batch to a JSON string and write it
-                        for label in batch_labels:
-                            json_file.write(json.dumps(label) + '\n')
-                    
-                    intermediate_start = intermediate_end
-                    batch_pairs = llm_input[intermediate_start:end_index]
-                    batch_labels, tokens_used = generate_batch_labels(batch_pairs, GENERATE_EN_LABELS_PROMPT, client)   
-                    total_tokens += tokens_used
-
-                    # Write the current batch to the JSON file
-                    with open(output_file, 'a') as json_file:
-                        # Convert the batch to a JSON string and write it
-                        for label in batch_labels:
-                            json_file.write(json.dumps(label) + '\n')
-                    
-                    # Sleep for 60 seconds every 10 iterations
-                    if (i + 1) % 5 == 0:
-                        print(f"Completed {i + 1} iterations. To prevent rate limits, sleeping for 60 seconds...")
-                        time.sleep(60)
-                        
-                    continue
+                intermediate_end = min(start_index + 5, len(llm_input))
+                batch_pairs = llm_input[start_index:intermediate_end]
                 
-            # Update the start index for the next batch
+                batch_labels, tokens_used = generate_batch_labels(batch_pairs, GENERATE_EN_LABELS_PROMPT, client)
+                total_tokens += tokens_used
+
+                with open(output_file, 'a') as json_file:
+                    for label in batch_labels:
+                        json_file.write(json.dumps(label) + '\n')
+
+                intermediate_start = intermediate_end
+                if intermediate_end < end_index:
+                    batch_pairs = llm_input[intermediate_start:end_index]
+                    batch_labels, tokens_used = generate_batch_labels(batch_pairs, GENERATE_EN_LABELS_PROMPT, client)
+                    total_tokens += tokens_used
+
+                    with open(output_file, 'a') as json_file:
+                        for label in batch_labels:
+                            json_file.write(json.dumps(label) + '\n')
+
+                if (i + 1) % 5 == 0:
+                    print(f"Completed {i + 1} iterations. To prevent rate limits, sleeping for 60 seconds...")
+                    time.sleep(60)
+
+                start_index = intermediate_end  # Ensure start index updates
+                just_in_case_stop_index = intermediate_end
+                continue  # Skip the rest of the loop
+
             start_index = end_index
 
-            # Write the current batch to the JSON file
             with open(output_file, 'a') as json_file:
-                # Convert the batch to a JSON string and write it
                 for label in batch_labels:
                     json_file.write(json.dumps(label) + '\n')
 
-            # Sleep for 60 seconds every 10 iterations
             if (i + 1) % 5 == 0:
                 print(f"Completed {i + 1} iterations. To prevent rate limits, sleeping for 60 seconds...")
                 time.sleep(60)
-                
+
             just_in_case_stop_index = end_index
-            # Include  extra rest (not sure why but just in case lol)
             time.sleep(2)
 
         print(f"All batches written to {output_file}")
         return total_tokens
 
     except Exception as e:
-        
         print(f"An error occurred while processing: {e}")
         print(f"Stopped at batch {just_in_case_stop_index}\n")
 
@@ -240,7 +231,7 @@ def pair_id_feedback(id_feedback: dict, feedback_labels: list):
     return feedback_labels
 
 
-def write_to_csv(region: str, combined):
+def write_to_csv(region: str, combined, df):
     # Convert to a DataFrame
     combined_df = pd.DataFrame(combined)
 
@@ -257,16 +248,26 @@ def write_to_csv(region: str, combined):
     combined_df.to_csv(csv_filename, index=False)
     print(f"{region} Labels are now store in the data folder under labelled_feedback.")
 
+    
+    csv_URL_filename = f'../data/labelled_feedback/{region}_labelled_feedback_data_with_URL.csv'
+    same_length = len(df) == len(combined_df)
+    if not same_length:
+        raise ValueError("Resultant Tables are not of the same length")
+    combined_df['URL'] = df['URL'].values
+    combined_df.to_csv(csv_URL_filename, index=False)
 
+
+import sys
 def main():
     region = "SG"
     df = load_region_data(region)
     llm_input, id_feedback = format_llm_input(df)
+    
     # Plan on what to do with this token consumed.
-    total_tokens_consumed = generate_labels(llm_input, num_per_batch=10)
+    total_tokens_consumed = generate_labels(llm_input, num_per_batch=10, output_file=f'../data/llm_responses/llm_responses.json')
     feedback_labels = read_json_file(file_path=f'../data/llm_responses/{region}_llm_responses.json')
     combined = pair_id_feedback(id_feedback, feedback_labels)
-    write_to_csv(region, combined)
+    write_to_csv(region, combined, df)
     print(f"This operation run has used up {total_tokens_consumed} tokens")
     return total_tokens_consumed
 
