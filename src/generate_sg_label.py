@@ -41,7 +41,7 @@ Double check and ensure that your format output matches the example output forma
 
 def load_region_data(region: str) -> pd.DataFrame:
     # Define the file path based on the region
-    region_path = f"../data/official_data/feedback_{region}.xls"
+    region_path = f"../data/official_data/feedback_{region}.xlsx"
 
     # Specify columns to read
     columns_to_read = ["Feedback id", "Feedback 1", "Feedback 2", "URL"]
@@ -257,7 +257,6 @@ def write_to_csv(region: str, combined, df):
     combined_df.to_csv(csv_URL_filename, index=False)
 
 
-import sys
 def main():
     region = "SG"
     df = load_region_data(region)
