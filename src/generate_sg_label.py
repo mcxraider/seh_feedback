@@ -4,6 +4,7 @@ import json
 import os
 import time
 import re
+import sys
 from tqdm import trange
 from langchain_core.prompts import PromptTemplate
 import logging
@@ -23,13 +24,12 @@ CHAT_MODEL   = os.environ["CHAT_MODEL"]
 client       = Groq()
 
 REGION = 'SG'
-LLM_OUTPUT_LOCATION = f'../data/llm_responses/{REGION}_llm_responses.json'
 CSV_OUTPUT_LOCATION = f'../data/labelled_feedback/{REGION}_labelled_feedback_data_with_URL.csv'
 
 #  load prompt from yaml file
 GENERATE_EN_LABELS_PROMPT = '''
 You are a linguistics professor with extensive experience in text analysis and sentiment classification. 
-Your task is to categorise seller feedback for an article page on an e-commerce platform.
+Your task is to categorise seller feedback for an article webpage on an e-commerce education platform.
 
 Follow these steps carefully:
 1. **Understand the Task**: Each feedback item must be assigned one or more labels from the following list:
@@ -38,15 +38,15 @@ Follow these steps carefully:
    - 'Design Feedback'
    - 'Positive Comment'
    - 'Neutral'
-   - 'Unsure'
+   - 'Unknown'
 
 2. **Interpretation Guidelines**:
-   - If the feedback clearly expresses dissatisfaction or a complaint, use 'Negative Complaint'.
-   - If the feedback contains suggestions or ideas for improvement, assign 'Constructive Criticism'.
-   - If the feedback specifically mentions aspects of design (layout, colour, aesthetics), assign 'Design Feedback'.
-   - If the feedback is overtly positive or complimentary, label it as 'Positive Comment'.
-   - If the feedback is factual or does not contain a clear sentiment, label it as 'Neutral'.
-   - If you are uncertain about the appropriate label, use 'Unsure'.
+    - Negative Complaint Expresses dissatisfaction without offering suggestions for improvement. (E.g., "The UI is terrible and frustrating to use.")
+    - Constructive Criticism – Offers specific feedback on what could be improved. (E.g., "The UI could be more intuitive by reducing unnecessary steps.")
+    - Design Feedback – Mentions aspects related to visual design, user experience, or layout. (E.g., "The font is too small and hard to read.")
+    - Positive Comment – Expresses satisfaction or praise. (E.g., "Great platform! I love using it.")
+    - Neutral – Does not express strong positive or negative sentiment. (E.g., "This feature exists.")
+    - Unknown – The intent or meaning of the feedback is unclear. (E.g., "hmmm... idk.")
 
 You are not to write any code, but just use your knowledge to classify the feedback.
 Your output should be the feedback IDs and their corresponding label.
@@ -165,7 +165,7 @@ def generate_batch_labels(id_feedback_pairs, label_prompt: str, client):
     return pairings, tokens_used
 
 
-def generate_labels(prompt, llm_input, output_file, num_per_batch):
+def generate_labels(prompt, llm_input, num_per_batch):
     if not isinstance(llm_input, list):
         raise TypeError("llm_input must be a list")
 
@@ -173,6 +173,7 @@ def generate_labels(prompt, llm_input, output_file, num_per_batch):
     start_index = 0
     just_in_case_stop_index = 0
     total_tokens = 0
+    labelled_data = []
     
     try:
         for i in trange(num_batches):
@@ -189,37 +190,23 @@ def generate_labels(prompt, llm_input, output_file, num_per_batch):
                 batch_labels, tokens_used = generate_batch_labels(batch_pairs, prompt, client)
                 total_tokens += tokens_used
 
-                # if output file is not made already, then create it first
-                
-                
-                
-                with open(output_file, 'a') as json_file:
-                    for label in batch_labels:
-                        json_file.write(json.dumps(label) + '\n')
-
                 intermediate_start = intermediate_end
                 if intermediate_end < end_index:
                     batch_pairs = llm_input[intermediate_start:end_index]
                     batch_labels, tokens_used = generate_batch_labels(batch_pairs, prompt, client)
                     total_tokens += tokens_used
 
-                    with open(output_file, 'a') as json_file:
-                        for label in batch_labels:
-                            json_file.write(json.dumps(label) + '\n')
 
                 if (i + 1) % 5 == 0:
                     print(f"Completed {i + 1} iterations. To prevent rate limits, sleeping for 60 seconds...")
                     time.sleep(60)
 
-                start_index = intermediate_end  # Ensure start index updates
+                start_index = intermediate_end  
                 just_in_case_stop_index = intermediate_end
                 continue  # Skip the rest of the loop
-
+            
+            labelled_data.extend(batch_labels)
             start_index = end_index
-
-            with open(output_file, 'a') as json_file:
-                for label in batch_labels:
-                    json_file.write(json.dumps(label) + '\n')
 
             if (i + 1) % 5 == 0:
                 print(f"Completed {i + 1} iterations. To prevent rate limits, sleeping for 60 seconds...")
@@ -227,34 +214,16 @@ def generate_labels(prompt, llm_input, output_file, num_per_batch):
 
             just_in_case_stop_index = end_index
             time.sleep(2)
-            if i >2:
-                break
-
-        print(f"All batches written to {output_file}")
-        return total_tokens
 
     except Exception as e:
         print(f"An error occurred while processing: {e}")
         print(f"Stopped at batch {just_in_case_stop_index}\n")
-
-
-def read_json_file(file_path: str):
-    try:
-        data = []
-        with open(file_path, 'r') as json_file:
-            for line in json_file:
-                data.append(json.loads(line.strip()))
-        return data
-    except FileNotFoundError:
-        print(f"Error: The file {file_path} does not exist.")
-    except json.JSONDecodeError as e:
-        print(f"Error decoding JSON: {e}")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        sys.exit()
+        
+    return total_tokens, labelled_data
         
         
 def pair_id_feedback(id_feedback, feedback_labels: list):
-    # print(id_feedback)
     for i in range(len(feedback_labels)):
         # get the feedback id
         id = feedback_labels[i]['feedback_id']
@@ -280,7 +249,7 @@ def process_output(combined, pattern=r"/([^/]+)/(\d+)"):
         combined_df['Comments']
         .str.replace('""', '"', regex=False)
         .str.strip('"')
-        .str.rstrip('\r\n')
+        .str.replace('\n', '')
     )
 
     # Function to extract text type and article number dynamically
@@ -303,11 +272,11 @@ def process_output(combined, pattern=r"/([^/]+)/(\d+)"):
 
 
 def export_to_csv(df, path):    
-    # check that the path to the file exists
+    # Ensure the directory exists
     os.makedirs(os.path.dirname(path), exist_ok=True)
     
-    # Save DataFrame to CSV
-    df.to_csv(path, index=False)
+    # Overwrite or create the file
+    df.to_csv(path, index=False, mode='w')
 
 
 
@@ -316,13 +285,12 @@ def main():
     llm_input, id_feedback = format_llm_input(df)
     
     # Plan on what to do with this token consumed.
-    total_tokens_consumed = generate_labels(GENERATE_EN_LABELS_PROMPT, llm_input, LLM_OUTPUT_LOCATION, num_per_batch=10)
-    feedback_labels = read_json_file(LLM_OUTPUT_LOCATION)
+    total_tokens_consumed, feedback_labels = generate_labels(GENERATE_EN_LABELS_PROMPT, llm_input[:80], num_per_batch=10)
     combined = pair_id_feedback(id_feedback, feedback_labels)
     final_df = process_output(combined)
 
     export_to_csv(final_df, CSV_OUTPUT_LOCATION)
-    print(f"This operation run required {total_tokens_consumed} tokens")
+    print(f"\n\nThis operation run required {total_tokens_consumed} tokens\n\n")
     return total_tokens_consumed
 
 
