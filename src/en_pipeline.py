@@ -9,7 +9,7 @@ from tqdm import trange
 from langchain_core.prompts import PromptTemplate
 import logging
 from math import ceil
-from typing import List, Dict, Tuple, Any
+from typing import List, Dict, Tuple
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
@@ -87,7 +87,6 @@ def load_region_data(region: str) -> pd.DataFrame:
     df_filtered = df_filtered.dropna(subset=['Feedback id'])
 
     return df_filtered
-
 
 
 def format_llm_input(df: pd.DataFrame) -> Tuple[List[Dict[str, str]], Dict[int, str]]:
@@ -277,7 +276,6 @@ def export_to_csv(df, path):
     
     # Overwrite or create the file
     df.to_csv(path, index=False, mode='w')
-
 
 
 def main():
