@@ -15,11 +15,9 @@ Notes:
 Pipelines:
 1. Pure English (SG)
 2. Mixed English and Other (MY and PH)
-3. Other (VN)
+3. Other (VN) (have to run this pipeline on colab notebook)
+
 
 Overlap pipeline: 
 - load_region_data() and format_llm_input() # for every region
 - Here then split for diff translation methods
-
-
-

@@ -22,22 +22,43 @@ GROQ_API_KEY = os.environ["GROQ_API_KEY"]
 CHAT_MODEL   = os.environ["CHAT_MODEL"]
 client       = Groq()
 
+REGION = 'SG'
+LLM_OUTPUT_LOCATION = f'../data/llm_responses/{REGION}_llm_responses.json'
+CSV_OUTPUT_LOCATION = f'../data/labelled_feedback/{REGION}_labelled_feedback_data_with_URL.csv'
+
+#  load prompt from yaml file
 GENERATE_EN_LABELS_PROMPT = '''
-You are an linguistics professor tasked with classifying seller feedback for an article page on an e-commerce platform. 
-Each feedback item should be categorised into one or more appropriate labels from the following list:
-['Negative Complaint','Constructive Criticism','Design Feedback','Positive Comment','Neutral', 'Unsure']
+You are a linguistics professor with extensive experience in text analysis and sentiment classification. 
+Your task is to categorise seller feedback for an article page on an e-commerce platform.
+
+Follow these steps carefully:
+1. **Understand the Task**: Each feedback item must be assigned one or more labels from the following list:
+   - 'Negative Complaint'
+   - 'Constructive Criticism'
+   - 'Design Feedback'
+   - 'Positive Comment'
+   - 'Neutral'
+   - 'Unsure'
+
+2. **Interpretation Guidelines**:
+   - If the feedback clearly expresses dissatisfaction or a complaint, use 'Negative Complaint'.
+   - If the feedback contains suggestions or ideas for improvement, assign 'Constructive Criticism'.
+   - If the feedback specifically mentions aspects of design (layout, colour, aesthetics), assign 'Design Feedback'.
+   - If the feedback is overtly positive or complimentary, label it as 'Positive Comment'.
+   - If the feedback is factual or does not contain a clear sentiment, label it as 'Neutral'.
+   - If you are uncertain about the appropriate label, use 'Unsure'.
+
 You are not to write any code, but just use your knowledge to classify the feedback.
 Your output should be the feedback IDs and their corresponding label.
-
-Now classify the following feedback:
-Feedbacks: {pairs}
 
 Example Output format:
 [{{"feedback_id": 123456, "label": ["Negative Complaint"]}}, {{"feedback_id": 423456, "label": ["Constructive Criticism","Design Feedback"]}}, {{"feedback_id": 654321, "label": ["Negative Complaint"]}}]
 
-Double check and ensure that your format output matches the example output format provided.
-''' 
+Now classify the following feedback:
+Feedbacks: {pairs}
 
+Double check and ensure that your format output matches the example output format provided.
+'''
 
 def load_region_data(region: str) -> pd.DataFrame:
     # Define the file path based on the region
@@ -73,12 +94,16 @@ def format_llm_input(df: pd.DataFrame) -> Tuple[List[Dict[str, str]], Dict[int, 
     # Extract feedback IDs and feedback text
     feedback_ids = list(df['Feedback id'])
     feedback_texts = list(df['Feedback 2'])
+    feedback_urls = list(df['URL'])
 
     # Create a dictionary mapping feedback IDs to feedback text
-    id_feedback = {int(feedback_id): feedback for feedback_id, feedback in zip(feedback_ids, feedback_texts)}
+    id_feedback = {int(feedback_id): [feedback,
+                                      feedback_url] 
+                   for feedback_id, feedback, feedback_url in zip(feedback_ids, feedback_texts, feedback_urls)}
 
     # Prepare the LLM input as a list of dictionaries
-    llm_input = [{'id': feedback_id, 'feedback': feedback} for feedback_id, feedback in id_feedback.items()]
+    llm_input = [{'id': feedback_id,
+                  'feedback': feedback_ls[0]} for feedback_id, feedback_ls in id_feedback.items()]
 
     return llm_input, id_feedback
 
@@ -140,7 +165,7 @@ def generate_batch_labels(id_feedback_pairs, label_prompt: str, client):
     return pairings, tokens_used
 
 
-def generate_labels(llm_input, num_per_batch, output_file):
+def generate_labels(prompt, llm_input, output_file, num_per_batch):
     if not isinstance(llm_input, list):
         raise TypeError("llm_input must be a list")
 
@@ -155,15 +180,19 @@ def generate_labels(llm_input, num_per_batch, output_file):
             batch_pairs = llm_input[start_index:end_index]
             
             try:
-                batch_labels, tokens_used = generate_batch_labels(batch_pairs, GENERATE_EN_LABELS_PROMPT, client)
+                batch_labels, tokens_used = generate_batch_labels(batch_pairs, prompt, client)
                 total_tokens += tokens_used
             except ValueError:
                 intermediate_end = min(start_index + 5, len(llm_input))
                 batch_pairs = llm_input[start_index:intermediate_end]
                 
-                batch_labels, tokens_used = generate_batch_labels(batch_pairs, GENERATE_EN_LABELS_PROMPT, client)
+                batch_labels, tokens_used = generate_batch_labels(batch_pairs, prompt, client)
                 total_tokens += tokens_used
 
+                # if output file is not made already, then create it first
+                
+                
+                
                 with open(output_file, 'a') as json_file:
                     for label in batch_labels:
                         json_file.write(json.dumps(label) + '\n')
@@ -171,7 +200,7 @@ def generate_labels(llm_input, num_per_batch, output_file):
                 intermediate_start = intermediate_end
                 if intermediate_end < end_index:
                     batch_pairs = llm_input[intermediate_start:end_index]
-                    batch_labels, tokens_used = generate_batch_labels(batch_pairs, GENERATE_EN_LABELS_PROMPT, client)
+                    batch_labels, tokens_used = generate_batch_labels(batch_pairs, prompt, client)
                     total_tokens += tokens_used
 
                     with open(output_file, 'a') as json_file:
@@ -198,6 +227,8 @@ def generate_labels(llm_input, num_per_batch, output_file):
 
             just_in_case_stop_index = end_index
             time.sleep(2)
+            if i >2:
+                break
 
         print(f"All batches written to {output_file}")
         return total_tokens
@@ -222,55 +253,79 @@ def read_json_file(file_path: str):
         print(f"An unexpected error occurred: {e}")
         
         
-def pair_id_feedback(id_feedback: dict, feedback_labels: list):
+def pair_id_feedback(id_feedback, feedback_labels: list):
+    # print(id_feedback)
     for i in range(len(feedback_labels)):
+        # get the feedback id
         id = feedback_labels[i]['feedback_id']
-        comment = id_feedback[id]
-        feedback_labels[i]['Comment'] = comment
+        feedback_labels[i]['Comment'] = id_feedback[id][0]
+        feedback_labels[i]['URL'] = id_feedback[id][1]
         
     return feedback_labels
 
 
-def write_to_csv(region: str, combined, df):
+def process_output(combined, pattern=r"/([^/]+)/(\d+)"):
     # Convert to a DataFrame
     combined_df = pd.DataFrame(combined)
 
     # Rename columns to match the required format
     combined_df.rename(columns={'feedback_id': 'Feedback id',
-                                'Comment': 'Comment',
-                                'label': 'Label'
-                                },
-                        inplace=True)
-    combined_df['Comment'] = combined_df['Comment'].str.replace('""', '"', regex=False).str.strip('"')
+                                'Comment': 'Comments',
+                                'label': 'Label(s)',
+                                'URL': 'Link to Article'},
+                       inplace=True)
 
-    # Save to CSV
-    csv_filename = f'../data/labelled_feedback/{region}_labelled_feedback_data.csv'
-    combined_df.to_csv(csv_filename, index=False)
-    print(f"{region} Labels are now store in the data folder under labelled_feedback.")
+    # Tidy up comments
+    combined_df['Comments'] = (
+        combined_df['Comments']
+        .str.replace('""', '"', regex=False)
+        .str.strip('"')
+        .str.rstrip('\r\n')
+    )
 
+    # Function to extract text type and article number dynamically
+    def extract_text_and_number(url):
+        match = re.search(pattern, url)  
+        if match:
+            return match.group(1), match.group(2)  
+        return "NIL", "NIL"  # Default if no match
+
+    # Apply extraction to the "Link to Article" column
+    combined_df[['Type', 'Article ID']] = combined_df['Link to Article'].apply(
+        lambda url: pd.Series(extract_text_and_number(url))
+    )
+
+    # reorder the columns
+    desired_order = ['Article ID', 'Comments', 'Label(s)', 'Link to Article', 'Type']
+    combined_df = combined_df[desired_order]
+
+    return combined_df
+
+
+def export_to_csv(df, path):    
+    # check that the path to the file exists
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     
-    csv_URL_filename = f'../data/labelled_feedback/{region}_labelled_feedback_data_with_URL.csv'
-    same_length = len(df) == len(combined_df)
-    if not same_length:
-        raise ValueError("Resultant Tables are not of the same length")
-    combined_df['URL'] = df['URL'].values
-    combined_df.to_csv(csv_URL_filename, index=False)
+    # Save DataFrame to CSV
+    df.to_csv(path, index=False)
+
 
 
 def main():
-    region = "SG"
-    df = load_region_data(region)
+    df = load_region_data(REGION)
     llm_input, id_feedback = format_llm_input(df)
     
     # Plan on what to do with this token consumed.
-    total_tokens_consumed = generate_labels(llm_input, num_per_batch=10, output_file=f'../data/llm_responses/llm_responses.json')
-    feedback_labels = read_json_file(file_path=f'../data/llm_responses/{region}_llm_responses.json')
+    total_tokens_consumed = generate_labels(GENERATE_EN_LABELS_PROMPT, llm_input, LLM_OUTPUT_LOCATION, num_per_batch=10)
+    feedback_labels = read_json_file(LLM_OUTPUT_LOCATION)
     combined = pair_id_feedback(id_feedback, feedback_labels)
-    write_to_csv(region, combined, df)
-    print(f"This operation run has used up {total_tokens_consumed} tokens")
-    return total_tokens_consumed
+    final_df = process_output(combined)
 
+    export_to_csv(final_df, CSV_OUTPUT_LOCATION)
+    print(f"This operation run required {total_tokens_consumed} tokens")
+    return total_tokens_consumed
 
 
 if __name__ == "__main__":
     total_tokens_used = main()
+
