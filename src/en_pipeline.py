@@ -10,6 +10,7 @@ from langchain_core.prompts import PromptTemplate
 import logging
 from math import ceil
 from typing import List, Dict, Tuple
+from datetime import datetime
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
@@ -22,11 +23,13 @@ load_dotenv()
 GROQ_API_KEY = os.environ["GROQ_API_KEY"]
 CHAT_MODEL   = os.environ["CHAT_MODEL"]
 client       = Groq()
+today_date = datetime.today().strftime('%Y-%m-%d')
 
 REGION = 'SG'
-CSV_OUTPUT_LOCATION = f'../data/labelled_feedback/{REGION}_labelled_feedback_data_with_URL.csv'
+CSV_OUTPUT_LOCATION = f'../data/labelled_feedback/{today_date}_{REGION}_labelled_feedback_data.csv'
 
 #  load prompt from yaml file
+
 GENERATE_EN_LABELS_PROMPT = '''
 You are a linguistics professor with extensive experience in text analysis and sentiment classification. 
 Your task is to categorise seller feedback for an article webpage on an e-commerce education platform.
@@ -42,7 +45,7 @@ Follow these steps carefully:
 
 2. **Interpretation Guidelines**:
     - Negative Complaint Expresses dissatisfaction without offering suggestions for improvement. (E.g., "The UI is terrible and frustrating to use.")
-    - Constructive Criticism – Offers specific feedback on what could be improved. (E.g., "The UI could be more intuitive by reducing unnecessary steps.")
+    - Constructive Criticism – Offers specific feedback on what could be improved . (E.g., "The UI could be more intuitive by reducing unnecessary steps.")
     - Design Feedback – Mentions aspects related to visual design, user experience, or layout. (E.g., "The font is too small and hard to read.")
     - Positive Comment – Expresses satisfaction or praise. (E.g., "Great platform! I love using it.")
     - Neutral – Does not express strong positive or negative sentiment. (E.g., "This feature exists.")
@@ -283,7 +286,7 @@ def main():
     llm_input, id_feedback = format_llm_input(df)
     
     # Plan on what to do with this token consumed.
-    total_tokens_consumed, feedback_labels = generate_labels(GENERATE_EN_LABELS_PROMPT, llm_input[:80], num_per_batch=10)
+    total_tokens_consumed, feedback_labels = generate_labels(GENERATE_EN_LABELS_PROMPT, llm_input, num_per_batch=10)
     combined = pair_id_feedback(id_feedback, feedback_labels)
     final_df = process_output(combined)
 
@@ -294,4 +297,3 @@ def main():
 
 if __name__ == "__main__":
     total_tokens_used = main()
-
