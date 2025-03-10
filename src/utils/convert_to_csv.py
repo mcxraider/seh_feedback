@@ -31,8 +31,3 @@ def combine_region(region):
         combine_xls(region)
     else:
         combine_xlsx(region)
-
-
-if __name__ == "__main__":
-    region = "SG"
-    combine_region(region)

@@ -29,9 +29,6 @@ now = datetime.today()
 today_date = now.strftime('%Y-%m-%d_') + now.strftime('%I%M%p').lstrip("0")
 
 
-REGION = 'SG'
-CSV_OUTPUT_LOCATION = f'../data/labelled_feedback/{today_date}_{REGION}_labelled_feedback_data.csv'
-
 GENERATE_EN_LABELS_PROMPT = '''
 You are a linguistics professor with extensive experience in text analysis and classification. 
 Your task is to categorise seller feedback for an article webpage on an e-commerce education platform.
@@ -68,7 +65,7 @@ Double check and ensure that your format output matches the example output forma
 
 def load_region_data(region: str) -> pd.DataFrame:
     # Define the file path based on the region
-    region_path = f"../data/combined_data/feedback{region}.csv"
+    region_path = f"../data/combined_data/feedback_{region}.csv"
 
     # Load the data into a DataFrame
     try:
@@ -77,6 +74,7 @@ def load_region_data(region: str) -> pd.DataFrame:
     except FileNotFoundError:
         print("\n\nERROR: Please ensure that you have followed the steps correctly and that the regions combined feedback is in the right folder and exists there.\n\n")
         sys.exit()
+        
     # Filter out rows with missing or invalid data
     df_filtered = df[
         (df['Feedback 1'].notna()) &
@@ -322,8 +320,13 @@ def export_to_csv(final_df, path):
     final_df.to_csv(path, index=False, mode='w', encoding='utf-8')
 
 
-def main():
-    df = load_region_data(REGION)
+def en_pipeline(region):
+    
+    CSV_OUTPUT_LOCATION = f'../data/labelled_feedback/{today_date}_{region}_labelled_feedback_data.csv'
+    
+    df = load_region_data(region)
+    print("df loaded")
+    sys.exit()
     llm_input, id_feedback = format_llm_input(df)
     
     # Plan on what to do with this token consumed.
@@ -334,6 +337,3 @@ def main():
     print(f"\n\nThis operation run required {total_tokens_consumed} tokens\n\n")
     return total_tokens_consumed
 
-
-if __name__ == "__main__":
-    total_tokens_used = main()
