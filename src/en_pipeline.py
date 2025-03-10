@@ -68,14 +68,15 @@ Double check and ensure that your format output matches the example output forma
 
 def load_region_data(region: str) -> pd.DataFrame:
     # Define the file path based on the region
-    region_path = f"../data/official_data/feedback_{region}.xlsx"
-
-    # Specify columns to read
-    columns_to_read = ["Feedback id", "Feedback 1", "Feedback 2", "URL"]
+    region_path = f"../data/combined_data/feedback{region}.csv"
 
     # Load the data into a DataFrame
-    df = pd.read_excel(region_path, usecols=columns_to_read)
-
+    try:
+        df = pd.read_csv(region_path)
+        
+    except FileNotFoundError:
+        print("\n\nERROR: Please ensure that you have followed the steps correctly and that the regions combined feedback is in the right folder and exists there.\n\n")
+        sys.exit()
     # Filter out rows with missing or invalid data
     df_filtered = df[
         (df['Feedback 1'].notna()) &
