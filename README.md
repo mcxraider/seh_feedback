@@ -1,5 +1,4 @@
 # SEH Feedback analysis for SG Region
-<br>
 
 ## 📝 Step-by-Step: How to Prepare Files and Run the Project
 
@@ -16,14 +15,15 @@
    - One file with feedback for **courses**
 
 3. **Rename the files:**
-   - Rename the article feedback file to: `feedback_SG_article.csv`
-   - Rename the course feedback file to: `feedback_SG_course.csv`
+   - Rename the article feedback file to: `feedback_SG_article`
+   - Rename the course feedback file to: `feedback_SG_course`
 
 4. **Move both files into the project folder:**
    - Place them inside this folder path (relative to the project root):
      ```
      data/official_data/
      ```
+     -> Put them in the official_data folder that's inside data.
 
 ### 📥 Part 2: Run the project in Terminal
 
