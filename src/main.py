@@ -7,10 +7,12 @@ import os
 REGION = "SG"
 
 def main(region):
-    
-    if f"feedback_{region}.csv" not in os.listdir("../data/combined_data"):
+    region_path = fr"C:\Users\SP14267\Desktop\seh\data\combined_data"
+
+    if f"feedback_{region}.csv" not in os.listdir(region_path):
         combine_region(region)
-    
+        region_path = fr"C:\Users\SP14267\Desktop\seh\data\combined_data"
+
     if region in ["SG"]:
         tokens_used = en_pipeline(region)
     else :
