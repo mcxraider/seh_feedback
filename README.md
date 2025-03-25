@@ -25,27 +25,41 @@
      ```
      -> Put them in the official_data folder that's inside data.
 
-### 📥 Part 2: Run the project in Terminal
 
-1. **Open your Terminal**
+## 🚀 Part 2: Run the Project in Terminal
 
-2. **Navigate to the project folder**
-   - In the terminal window, type this command:
-     ```
-     cd Desktop/seh/src
-     ```
-   - Then press `Enter`.
+Follow these steps to run the project on your Windows machine:
 
-   ✅ This tells your computer to “Change Directory” to where your project is located.
+### 1. 📂 Open your Terminal
+You can use **Command Prompt**, **PowerShell**, or **Windows Terminal**.
 
-3. **Run the project**
-   - Type the following command and press `Enter`:
-     ```
-     python main.py
-     ```
+### 2. 📁 Navigate to the Project Folder
+In your terminal, run the following command:
+```bash
+cd Desktop/seh/
+```
+✅ This command changes your current directory to where your project is located. Adjust the path if your project is stored elsewhere.
 
-   ✅ This will start the project (make sure Python is installed!).
----
+### 3. 🐍 Activate the Virtual Environment (Windows)
+Assuming you've already set up a virtual environment (e.g., named `venv`), activate it with:
+```bash
+.\venv\Scripts\activate
+```
+✅ You should now see `(venv)` at the start of your terminal line, indicating the environment is active.
+
+
+### 4. 📂 Navigate to the `src` Folder
+```bash
+cd src
+```
+✅ This moves you into the folder where your main script is located.
+
+### 5. ▶️ Run the Project
+Now start the app by running:
+```bash
+python main.py
+```
+
 
 ### ❗️Tips
 - If `python main.py` doesn’t work, try:
@@ -53,5 +67,4 @@
   python3 main.py
   ```
 - If you see an error saying Python is not found, you might need to install it. Let me know if you need help with that!
-
 
