@@ -24,6 +24,7 @@
      data/official_data/
      ```
      -> Put them in the official_data folder that's inside data.
+     -> If there are existing files inside, make sure to delete them!
 
 
 ## 🚀 Part 2: Run the Project in Terminal
