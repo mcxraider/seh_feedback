@@ -292,32 +292,34 @@ def process_output(combined, org_df, pattern=r"/([^/]+)/(\d+)"):
 
     return combined_df
 
-def export_to_csv(final_df, path):    
+
+def export_to_csv(final_df, path):
     # Ensure the directory exists
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    
-    query = '''
-    WITH cte AS (
-        SELECT "Article ID", COUNT(*) AS feedbacks_per_article
-        FROM df
-        GROUP BY "Article ID"
-        ORDER BY "Article ID"
+
+    # 1) Create a summary (like your CTE) that counts the rows per "Article ID"
+    cte = (
+        final_df
+        .groupby("Article ID")
+        .size()  # Equivalent to COUNT(*) in SQL
+        .reset_index(name="feedbacks_per_article")
     )
-    SELECT *
-    FROM df
-    INNER JOIN cte ON cte."Article ID" = df."Article ID"
-    ORDER BY feedbacks_per_article DESC;
-    '''
-    
-    # Execute the SQL query with DuckDB, passing the dataframe as a parameter.
-    result = duckdb.query(query, {'df': final_df}).final_df()
-    
-    # Drop the extra column if it exists.
+
+    # 2) Merge the summary back onto the original dataframe
+    #    (INNER JOIN on "Article ID")
+    result = final_df.merge(cte, on="Article ID", how="inner")
+
+    # 3) Sort by the feedbacks_per_article count in descending order
+    result.sort_values(by="feedbacks_per_article", ascending=False, inplace=True)
+
+    # 4) If you still need to drop "Article ID_1" (or any extra columns),
+    #    you can do so here. (Usually not needed in a pure Pandas approach.)
     if "Article ID_1" in result.columns:
         result.drop("Article ID_1", axis=1, inplace=True)
-    
-    # Overwrite or create the file
-    final_df.to_csv(path, index=False, mode='w', encoding='utf-8')
+
+    # 5) Save the final dataframe to CSV
+    result.to_csv(path, index=False, mode='w', encoding='utf-8')
+
 
 
 def en_pipeline(region):
