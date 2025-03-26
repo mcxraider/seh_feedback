@@ -41,21 +41,14 @@ cd Desktop/seh/
 ```
 ✅ This command changes your current directory to where your project is located. Adjust the path if your project is stored elsewhere.
 
-### 3. 🐍 Activate the Virtual Environment (Windows)
-Assuming you've already set up a virtual environment (e.g., named `venv`), activate it with:
-```bash
-.\venv\Scripts\activate
-```
-✅ You should now see `(venv)` at the start of your terminal line, indicating the environment is active.
 
-
-### 4. 📂 Navigate to the `src` Folder
+### 3. 📂 Navigate to the `src` Folder
 ```bash
 cd src
 ```
 ✅ This moves you into the folder where your main script is located.
 
-### 5. ▶️ Run the Project
+### 4. ▶️ Run the Project
 Now start the app by running:
 ```bash
 python main.py
