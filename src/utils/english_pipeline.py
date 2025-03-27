@@ -61,6 +61,7 @@ Now classify the following feedback:
 Feedbacks: {pairs}
 
 Double check and ensure that your format output matches the example output format provided.
+In your response, ensure that you do not include the explanation for why u have classified certain comments into certain categories.
 '''
 
 def load_region_data(region: str) -> pd.DataFrame:
@@ -121,21 +122,23 @@ def get_id_labels(llm_response: str, pattern: str = r'\[\s*\{(?:.|\n)*\}\s*\]') 
         match = re.search(pattern, llm_response, re.DOTALL)
         if not match:
             print(f"THIS RESPONSE WAS PRODUCED AND WAS UNABLE TO BE PICKED UP:\n{llm_response}")
-            raise ValueError("No valid JSON list found in the response.")
+            raise ValueError("No valid JSON list found in the response. Please contact Jerry on telegram @jer_jerryyy if u need to fix this issue")
 
         json_string = match.group(0)
         result = json.loads(json_string)
 
         # Validate the structure of the result
         if not isinstance(result, list) or not all(isinstance(item, dict) for item in result):
-            raise ValueError("Extracted JSON is not a list of dictionaries.")
+            raise ValueError("Extracted JSON is not a list of dictionaries. Please contact Jerry on telegram @jer_jerryyy if u need to fix this issue")
         
         return result
 
     except json.JSONDecodeError as e:
-        raise ValueError(f"Failed to decode JSON: {e}")
+        print("ERROR WITH THIS RESPONSE")
+        print(llm_response)
+        raise ValueError(f"Failed to decode JSON: {e}. Please contact Jerry on telegram @jer_jerryyy if u need to fix this issue")
     except Exception as e:
-        raise RuntimeError(f"An unexpected error occurred: {e}")
+        raise RuntimeError(f"An unexpected error occurred: {e}. Please contact Jerry on telegram @jer_jerryyy if u need to fix this issue")
 
 
 def generate_batch_labels(id_feedback_pairs, label_prompt: str, client):
@@ -188,6 +191,7 @@ def generate_labels(prompt, llm_input, num_per_batch):
                 batch_labels, tokens_used = generate_batch_labels(batch_pairs, prompt, client)
                 total_tokens += tokens_used
             except ValueError:
+                
                 intermediate_end = min(start_index + 5, len(llm_input))
                 batch_pairs = llm_input[start_index:intermediate_end]
                 
